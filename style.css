@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    
+}
+
+/* Navbar styling */
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out, boxShadow 1s ease-in-out forwards;
+    
+}
+
+.navbar .logo {
+    visibility: hidden;
+    font-size: 2rem;
+    animation: logo 1s linear forwards; 
+    animation-delay: 1s; 
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    visibility: hidden;
+    animation: nav 1s linear forwards; 
+    animation-delay: 2s; 
+}
+
+.navbar .nav-links li {
+    margin: 0 1rem;
+}
+
+.navbar .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: white;
+    animation: backgroundChange 0.3s forwards;
+    border-radius: 4px;
+}
+
+/* Keyframes for navbar animation */
+
+@keyframes backgroundChange {
+    from{
+        background-color: none;
+    }
+    to{
+        background-color: green;
+    }
+}
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes boxShadow {
+    0% {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes logo {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+   
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+
+    }
+}
+
+@keyframes nav {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+   
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+
+    }
+}
+
+
+.main{
+
+    width: 100%; 
+    height: 90vh; 
+    background-image: url('https://i.pinimg.com/736x/e8/de/ee/e8deee2cdc5a703fd7cc217ad770e1be.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.card{
+    width: 700px;
+    height: auto;
+    padding-left: 100px;
+}
+
+.card h1{
+    color: white;
+    padding-top: 250px;
+    font-size: 50px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.card p{
+    padding-top: 30px;
+    color: white;
+    font-weight: 400;
+    animation: fadeIn 1.5s ease-out; 
+}
+
+.card button{
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    animation: scaleUp 1.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Yashirin bo'ladi */
+        transform: translateY(-70px); /* Pastdan yuqoriga siljiydi */
+    }
+    to {
+        opacity: 1; /* Ko'rinadi */
+        transform: translateY(0); /* O'rnida bo'ladi */
+    }
+}
+
+/* p elementi uchun animatsiya */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Yashirin bo'ladi */
+    }
+    to {
+        opacity: 1; /* Ko'rinadi */
+    }
+}
+
+/* button elementi uchun animatsiya */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.7); /* Kichikroq o'lchamda */
+        opacity: 0; /* Yashirin bo'ladi */
+    }
+    to {
+        transform: scale(1); /* Asl o'lchamiga qaytadi */
+        opacity: 1; /* Ko'rinadi */
+    }
+}
+
